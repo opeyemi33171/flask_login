@@ -12,7 +12,7 @@ def welcome_page():
 def login_page():
     error = None
     if request.method == 'POST':
-        if request.form['username'] != 'opey' and request.form['password'] == 'answer':
+        if request.form['username'] != 'opey' or request.form['password'] != 'answer':
             error = 'You have entered the wrong username, password combination.'
         else:
             return redirect(url_for('welcome_page'))
